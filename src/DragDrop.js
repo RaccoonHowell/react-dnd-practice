@@ -1,6 +1,5 @@
-import React, {useState} from "react" 
+import React from "react" 
 import DraggableDiv from "./DraggableDiv"
-import { useDrop } from "react-dnd"
 import DroppableDiv from "./DroppableDiv"
 
 const divContentList = [

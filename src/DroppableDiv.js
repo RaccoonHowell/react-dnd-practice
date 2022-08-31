@@ -1,4 +1,4 @@
-import React, {useState} from "react" 
+import React, { useState } from "react" 
 import { useDrop } from "react-dnd"
 
 const DroppableDiv = () => {
@@ -6,7 +6,6 @@ const DroppableDiv = () => {
 
     const [{isOver}, drop] = useDrop(() => ({
         accept: "div",
-        // drop: () => setDropSquare("dropped"),
         drop: (item) => setDropSquare(item.string),
         collect: (monitor) => ({
             isOver: !!monitor.isOver(),
@@ -14,7 +13,13 @@ const DroppableDiv = () => {
     }))
 
     return (
-        <div className="gridSquare" style={{border: isOver ? "green solid 5px" : "black solid 1px"}} ref={drop}>{dropSquare}</div>
+        <div 
+            className="gridSquare" 
+            style={{border: isOver ? "green solid 5px" : "black solid 1px"}} 
+            ref={drop}
+        >
+            {dropSquare}
+        </div>
     )
 }
 
